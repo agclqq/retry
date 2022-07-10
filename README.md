@@ -3,7 +3,10 @@
 This is a retry package with backoff.
 
 #useage
-**direct use**
+
+**direct use**:
+
+Run until the maximum number of times to stop.When MaxAttempts is 0, it does not stop.
 ```go
     r := Retry{
         InitialBackoff:    1,
@@ -17,6 +20,8 @@ This is a retry package with backoff.
     }
 ```
 **reset**
+
+Reset the current count to 0, and you can count again.
 ```go
     r := Retry{
         InitialBackoff:    1,
@@ -33,6 +38,8 @@ This is a retry package with backoff.
     })
 ```
 **cancel**
+
+If you don't want to continue, you can cancel.
 ```go
     r := Retry{
         InitialBackoff:    1,
