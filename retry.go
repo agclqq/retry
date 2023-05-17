@@ -16,7 +16,7 @@ type Retry struct {
 func (rt *Retry) Run(f func(step uint)) {
 	sleepTime := rt.InitialBackoff
 	for {
-		rt.step++
+		rt.step+=1
 		if rt.MaxAttempts > 0 && rt.step > rt.MaxAttempts || rt.cancel {
 			break
 		}
